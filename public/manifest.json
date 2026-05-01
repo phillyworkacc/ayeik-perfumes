@@ -1,0 +1,20 @@
+{
+  "name": "Ayeik Perfumes Email & SMS Marketing",
+  "short_name": "Ayeik Perfumes Email & SMS Marketing",
+  "description": "An app to manage Ayeik Perfumes Email & SMS's Marketing",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity"]
+}
