@@ -16,21 +16,11 @@ type AutomationDefault = {
    emailContent: string;
 }
 
-type SMSCampaign = {
+type Campaign = {
    id: number;
    campaignId: string;
    name: string;
    message: string;
-   sent: boolean;
-   sentOn: string;
-   dateCreated: string;
-}
-
-type EmailCampaign = {
-   id: number;
-   campaignId: string;
-   name: string;
-   emailContent: string;
    sent: boolean;
    sentOn: string;
    dateCreated: string;
