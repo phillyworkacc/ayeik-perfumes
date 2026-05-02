@@ -10,6 +10,7 @@ import { ChartBar, Copy, LogOut, Megaphone, MessageCirclePlus, UsersRound } from
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
 import { CSSProperties } from "react";
+import { toast } from "sonner";
 
 type DashboardPageProps = {
 	totalSubscribers: Subscriber[];
@@ -34,6 +35,11 @@ export default function DashboardPage ({ totalSubscribers }: DashboardPageProps)
 		{ link: "/campaigns", label: "Campaigns", icon: Megaphone, color: "#0061bb" },
 		{ link: "/sign-up-message", label: "Sign Up Message", icon: MessageCirclePlus, color: "#b35600" }
 	]
+
+	function copySignUpLink () {
+		copyToClipboard("https://ayeik-perfumes.vercel.app/signup")
+		toast.success("Copied!")
+	}
 
 	return (
 		<AppWrapper>
@@ -67,7 +73,7 @@ export default function DashboardPage ({ totalSubscribers }: DashboardPageProps)
 			<Spacing size={2} />
 
 			<div className="text-l bold-600 full mb-1">Sign Up Link</div>
-			<button className="xxxs pd-13 pdx-2 radius-20" onClick={() => copyToClipboard(`https://ayeik-perfumes.vercel.app/signup`)}>
+			<button className="xxxs pd-13 pdx-2 radius-20" onClick={copySignUpLink}>
 				<Copy size={17} /> Copy Signup Link
 			</button>
 			<Spacing size={2} />
