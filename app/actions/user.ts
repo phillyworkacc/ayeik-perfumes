@@ -3,6 +3,7 @@ import { dalDbOperation } from "@/dal/helpers";
 import { db } from "@/db";
 import { automationsTable } from "@/db/schemas";
 import { authOptions } from "@/lib/authOptions";
+import { welcomeMessageId } from "@/utils/utils";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
 
@@ -20,11 +21,11 @@ export async function saveWelcomeSMSMessage (message: string) {
       const user = await getCurrentUser();
       if (!user) return false;
 
-      const automationId = "56c76ea3-3010-4481-b8c7-c21048d8a7e1";
+      // const automationId = "56c76ea3-3010-4481-b8c7-c21048d8a7e1";
       const saved = await dalDbOperation(async () => {
          const res = await db.update(automationsTable)
             .set({ welcomeText: message })
-            .where(eq(automationsTable.automationId, automationId));
+            .where(eq(automationsTable.automationId, welcomeMessageId));
          return (res.rowCount === 1)
       });
 

@@ -1,0 +1,1 @@
+export const welcomeMessageId = "56c76ea3-3010-4481-b8c7-c21048d8a7e1";

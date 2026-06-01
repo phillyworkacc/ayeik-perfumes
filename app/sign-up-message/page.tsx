@@ -4,13 +4,15 @@ import { automationsTable } from "@/db/schemas";
 import { sanitiseObject } from "@/utils/sanitise";
 import SignUpMessage from "./SignUpMessage";
 import LoadingPage from "@/components/LoadingPage/LoadingPage";
+import { eq } from "drizzle-orm";
+import { welcomeMessageId } from "@/utils/utils";
 
 export default async function page () {
    await dalRequireAuthRedirect();
 
    const welcomeSMSMessageData = await dalRequireAuth(() =>
       dalDbOperation(async () => {
-         const res = await db.select().from(automationsTable).limit(1);
+         const res = await db.select().from(automationsTable).where(eq(automationsTable.automationId, welcomeMessageId)).limit(1);
          return res[0];
       })
    )
