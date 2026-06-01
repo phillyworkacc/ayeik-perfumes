@@ -60,7 +60,7 @@ export default function page () {
                You have successfully signed up to the Ayeik Perfumes Community.
             </div>
             <div className="text-xxs pd-05 text-center full">
-               We have sent you a message in yor inbox and sms. 
+               We have sent you a message in your inbox and sms. 
             </div>
          </div>) : (<>         
             <div className="box full pd-2 dfb align-center justify-center pdx-2">
