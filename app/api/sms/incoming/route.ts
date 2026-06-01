@@ -14,8 +14,8 @@ export async function POST(req: NextRequest) {
       if (!process.env.TWILIO_NUMBER) return new Response("Error", { status: 500 });
 
       // validate twilio phone number
-      const urbanauraPhoneNumber = process.env.TWILIO_NUMBER;
-      if (to !== urbanauraPhoneNumber) {
+      const businessPhoneNumber = process.env.TWILIO_NUMBER;
+      if (to !== businessPhoneNumber) {
          return new Response("Error", { status: 500 });
       }
 
